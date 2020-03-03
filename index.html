@@ -1,1 +1,93 @@
-initial
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Giphy Favorites  DJ</title>
+</head>
+
+<!-- CSS Styles (These styles are provided to you. Don't touch these!) -->
+
+
+<body>
+<!-- <div id="buttons-view"></div>     ---->
+
+    <form id="showinput">
+       
+    <label>Enter your favorite TV series or show</label>
+    <br>
+    <input type="text" id="tvAnswer"/><br/><br/>
+    <input type="submit" id = "submit" value="Submit" /><br/><br/>
+   
+ <!--   <button id="userShow">tvSeries</button>    --->
+    </form>
+
+
+	<div class="container">
+
+    <div id="got-buttons"></div>
+    
+
+  <div id="display"></div>
+  <div id="buttons"></div>
+  
+
+<!--------------------------------------------------------------------------------------------------------------->
+<!--------------------------------------------------------------------------------------------------------------->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+var topics = ["Flintstones"];
+var i=0;
+/////////////////////////////////////////////////////////////////////////////////
+//   This is the function to make buttons                                 ///////
+/////////////////////////////////////////////////////////////////////////////////
+function makeButtons() {
+
+        $("#got-buttons").empty();
+
+        for (i = 0; i < topics.length; i++) {
+            var b = $("<button>");
+            b.addClass("show-btn");
+            b.attr("data-name", topics[i]);
+            b.text(topics[i]);
+
+            $("#got-buttons").append(b);
+        };
+        };
+
+/////////////////////////////////////////////////////////////////////////////////
+//   This is the function that loads the users input on Submit            ///////
+/////////////////////////////////////////////////////////////////////////////////
+
+$("#submit").on("click", function(event) {
+
+event.preventDefault();
+
+var character = $("#tvAnswer").val().trim();
+
+topics.push(character);
+$("#tvAnswer").val("");
+
+makeButtons();
+
+console.log(topics);
+});
+
+makeButtons();
+
+/////////////////////////////////////////////////////////////////////////////////
+//   This is the function that call Giphy once topic button is pushed     ///////
+/////////////////////////////////////////////////////////////////////////////////
+
+//on click
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
