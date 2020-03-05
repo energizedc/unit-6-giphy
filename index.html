@@ -3,90 +3,46 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Giphy Favorites  DJ</title>
+  <title>Favorite TV Shows and Characters  DJ</title>
+  <link rel="stylesheet"  type = "text/css"  href="assets/css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> 
+
+
 </head>
-
-<!-- CSS Styles (These styles are provided to you. Don't touch these!) -->
-
 
 <body>
 <!-- <div id="buttons-view"></div>     ---->
-
+  <div id="bigcontainer"></div>
     <form id="showinput">
        
-    <label>Enter your favorite TV series or show</label>
-    <br>
-    <input type="text" id="tvAnswer"/><br/><br/>
-    <input type="submit" id = "submit" value="Submit" /><br/><br/>
-   
- <!--   <button id="userShow">tvSeries</button>    --->
-    </form>
+      <label>Enter your favorite TV character or show.</label><br/>
+      <label>For example, "Spongebob" or "Brady Bunch".</label>
+      <br>
+      <input type="text" id="tvAnswer"/><br/><br/>
+      <input type="submit" id = "submit" value="Submit" /><br/><br/>
+
+      <h4>Then click on the button to retrieve your videos</h4>
+      <h4>Next, click on the picture to start/stop your videos</h4>
+      <h4>Have Fun !!!!</h4>
+
+     </form>
 
 
 	<div class="container">
 
-    <div id="got-buttons"></div>
-    
+      <div id="got-buttons"><strong></strong></div>
+      <br/>
+      <div id="gifs"></div>
 
-  <div id="display"></div>
-  <div id="buttons"></div>
   
+
+</div>
 
 <!--------------------------------------------------------------------------------------------------------------->
 <!--------------------------------------------------------------------------------------------------------------->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-
-var topics = ["Flintstones"];
-var i=0;
-/////////////////////////////////////////////////////////////////////////////////
-//   This is the function to make buttons                                 ///////
-/////////////////////////////////////////////////////////////////////////////////
-function makeButtons() {
-
-        $("#got-buttons").empty();
-
-        for (i = 0; i < topics.length; i++) {
-            var b = $("<button>");
-            b.addClass("show-btn");
-            b.attr("data-name", topics[i]);
-            b.text(topics[i]);
-
-            $("#got-buttons").append(b);
-        };
-        };
-
-/////////////////////////////////////////////////////////////////////////////////
-//   This is the function that loads the users input on Submit            ///////
-/////////////////////////////////////////////////////////////////////////////////
-
-$("#submit").on("click", function(event) {
-
-event.preventDefault();
-
-var character = $("#tvAnswer").val().trim();
-
-topics.push(character);
-$("#tvAnswer").val("");
-
-makeButtons();
-
-console.log(topics);
-});
-
-makeButtons();
-
-/////////////////////////////////////////////////////////////////////////////////
-//   This is the function that call Giphy once topic button is pushed     ///////
-/////////////////////////////////////////////////////////////////////////////////
-
-//on click
-
-
-
-
-
-
+<script type="text/javascript" src="assets/javascript/giphy.js">
 
 </script>
 </body>
