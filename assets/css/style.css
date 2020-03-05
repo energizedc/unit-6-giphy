@@ -1,0 +1,19 @@
+#showinput{
+    background-color: chocolate;
+    font-size: 18px;
+    font-weight: bold;
+    border-style:solid;
+    border-color:black;
+    border: 3 3 3 3;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+#submit{
+    background-color: lightseagreen;
+    border-style:solid;
+    border-color:black;
+    border: 3 3 3 3;
+    height: 50px;
+    width: 75px;
+    border-radius: 10px;
+}
